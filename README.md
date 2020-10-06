@@ -1,8 +1,8 @@
 # C++ File mapping into memory
 
-Normally projects has the need to read some configuration files such application parameters, important data, etc. As a back endpoint
-everyone wants most speed up performing routines, in this case reading files. To check, investigate and corroborate which manner is the
-best way and option to choice, I have tested different ways.
+Normally projects have the need to read some configuration files such application parameters, important data, etc. As a back endpoint
+everyone wants better speed performing routines, in this case reading files. To check, investigate and corroborate which manner is the
+best way to choice, I have tested different options.
 
 ### **Setup**
 
@@ -66,8 +66,10 @@ traditional_read (big.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:13s
 traditional_read (big.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:12s:945ms:756000ns:00?s:
 ```
 
-Test was stopped at 1000 iterations on stream_mapping due to slow it was. Main reason is due to the overhead that stream plus memory reallocation of the dynamic containers (vector, deque).
-As you can see, it is very slow way in comparison with the other ones.
+Test was stopped at 1000 iterations on stream_mapping due to slow it was. 
+Main reason is due to the overhead that stream has plus memory reallocation of the dynamic containers (vector, deque) when data is inserted on them.
+As you can see, these ones are very slow ways in comparison with the other ones.
+
 
 ## Kernel IO
 
