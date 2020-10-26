@@ -20,7 +20,7 @@ There are two files to test. small file is 391 KB big and big file is 24.607KB r
 
 ### **Benchmark results**
 
-```cpp
+
 #### Windows OS, W10 (MVSC)
 ##### OPTIMIZATIONS **DISABLED**
 
@@ -76,7 +76,7 @@ As you can see, these ones are very slow ways in comparison with the other ones.
 
 ##### OPTIMIZATIONS **ENABLED**
 
-```cpp
+```
 Kernel mapping (small.file) --> 1 iteration: 00m:00s:00ms:141100ns:00us:
 traditional_read (small.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:00ms:263900ns:00us:
 traditional_read (small.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:00ms:195600ns:00us:
