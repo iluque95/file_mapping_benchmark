@@ -24,15 +24,16 @@ std::ostream& display(std::ostream& os, std::chrono::nanoseconds ns)
 	ns -= _s;
 	auto _ms = duration_cast<milliseconds>(ns);
 	ns -= _ms;
-	auto _ns = duration_cast<nanoseconds>(ns);
-	ns -= _ns;
 	auto _micros = duration_cast<microseconds>(ns);
+	ns -= _micros;
+	auto _ns = duration_cast<nanoseconds>(ns);
 
 	os << setw(2) << _min.count() << "m:"
 		<< setw(2) << _s.count() << "s:"
 		<< setw(2) << _ms.count() << "ms:"
-		<< setw(2) << _ns.count() << "ns:"
-		<< setw(2) << _micros.count() << "us:";
+		<< setw(2) << _micros.count() << "us:"
+		<< setw(2) << _ns.count() << "ns";
+		
 	os.fill(fill);
 	return os;
 };
@@ -273,6 +274,8 @@ int main()
 			stream_mapping_deque(big_file, it);
 			stream_mapping_vector(big_file, it);
 		}
+
+		std::cout << "\n";
 
 	}
 

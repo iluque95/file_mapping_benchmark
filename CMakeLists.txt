@@ -24,3 +24,7 @@ string(REGEX REPLACE "([\\/\\-]O)3" "\\12"
   CMAKE_CXX_FLAGS_MINSIZEREL "${CMAKE_CXX_FLAGS_MINSIZEREL}")
 string(REGEX REPLACE "([\\/\\-]O)3" "\\12"
   CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
+
+if (UNIX)
+	target_link_libraries(benchmark stdc++fs)
+endif (UNIX)
