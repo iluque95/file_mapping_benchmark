@@ -77,72 +77,74 @@ As you can see, these ones are very slow ways in comparison with the other ones.
 ##### OPTIMIZATIONS **ENABLED**
 
 ```
-Kernel mapping (small.file) --> 1 iteration: 00m:00s:00ms:141100ns:00us:
-traditional_read (small.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:00ms:263900ns:00us:
-traditional_read (small.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:00ms:195600ns:00us:
-traditional_read (small.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:00ms:175500ns:00us:
-traditional_read (small.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:00ms:167200ns:00us:
-traditional_read (small.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:00ms:172800ns:00us:
-one transaction seek (small.file) --> 1 iteration: 00m:00s:00ms:289900ns:00us:
-one transaction fs (small.file) --> 1 iteration: 00m:00s:00ms:218300ns:00us:
-stream_mapping_deque (small.file) --> 1 iteration: 00m:00s:03ms:759900ns:00us:
-stream_mapping_vector (small.file) --> 1 iteration: 00m:00s:01ms:841400ns:00us:
+Kernel mapping (small.file) --> 1 iteration: 00m:00s:00ms:205us:200ns
+traditional_read (small.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:00ms:260us:800ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:00ms:205us:900ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:00ms:199us:700ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:00ms:180us:800ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:00ms:184us:700ns
+one transaction seek (small.file) --> 1 iteration: 00m:00s:00ms:325us:600ns
+one transaction fs (small.file) --> 1 iteration: 00m:00s:00ms:207us:200ns
+stream_mapping_deque (small.file) --> 1 iteration: 00m:00s:03ms:863us:300ns
+stream_mapping_vector (small.file) --> 1 iteration: 00m:00s:02ms:118us:100ns
 
-Kernel mapping (small.file) --> 1000 iteration: 00m:00s:67ms:884200ns:00us:
-traditional_read (small.file). Buffer size: 512 bytes --> 1000 iteration: 00m:00s:172ms:248800ns:00us:
-traditional_read (small.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:00s:158ms:467500ns:00us:
-traditional_read (small.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:00s:151ms:156300ns:00us:
-traditional_read (small.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:00s:153ms:628500ns:00us:
-traditional_read (small.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:00s:151ms:94300ns:00us:
-one transaction seek (small.file) --> 1000 iteration: 00m:00s:188ms:564800ns:00us:
-one transaction fs (small.file) --> 1000 iteration: 00m:00s:200ms:733100ns:00us:
-stream_mapping_deque (small.file) --> 1000 iteration: 00m:03s:450ms:644300ns:00us:
-stream_mapping_vector (small.file) --> 1000 iteration: 00m:01s:497ms:876500ns:00us:
+Kernel mapping (small.file) --> 1000 iteration: 00m:00s:74ms:845us:800ns
+traditional_read (small.file). Buffer size: 512 bytes --> 1000 iteration: 00m:00s:198ms:492us:700ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:00s:156ms:553us:00ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:00s:151ms:891us:300ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:00s:153ms:356us:200ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:00s:151ms:832us:800ns
+one transaction seek (small.file) --> 1000 iteration: 00m:00s:192ms:130us:100ns
+one transaction fs (small.file) --> 1000 iteration: 00m:00s:199ms:318us:500ns
+stream_mapping_deque (small.file) --> 1000 iteration: 00m:03s:430ms:518us:800ns
+stream_mapping_vector (small.file) --> 1000 iteration: 00m:01s:838ms:446us:900ns
 
-Kernel mapping (small.file) --> 10000 iteration: 00m:00s:648ms:318800ns:00us:
-traditional_read (small.file). Buffer size: 512 bytes --> 10000 iteration: 00m:01s:679ms:439600ns:00us:
-traditional_read (small.file). Buffer size: 1024 bytes --> 10000 iteration: 00m:01s:568ms:398600ns:00us:
-traditional_read (small.file). Buffer size: 2048 bytes --> 10000 iteration: 00m:01s:519ms:113500ns:00us:
-traditional_read (small.file). Buffer size: 4096 bytes --> 10000 iteration: 00m:01s:509ms:262200ns:00us:
-traditional_read (small.file). Buffer size: 8192 bytes --> 10000 iteration: 00m:01s:492ms:33700ns:00us:
-one transaction seek (small.file) --> 10000 iteration: 00m:01s:488ms:939900ns:00us:
-one transaction fs (small.file) --> 10000 iteration: 00m:01s:594ms:516600ns:00us:
-stream_mapping_deque (small.file) --> 10000 iteration: 00m:32s:624ms:276800ns:00us:
-stream_mapping_vector (small.file) --> 10000 iteration: 00m:14s:771ms:72600ns:00us:
+Kernel mapping (small.file) --> 10000 iteration: 00m:00s:644ms:474us:100ns
+traditional_read (small.file). Buffer size: 512 bytes --> 10000 iteration: 00m:01s:698ms:462us:900ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 10000 iteration: 00m:01s:580ms:255us:500ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 10000 iteration: 00m:01s:625ms:406us:700ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 10000 iteration: 00m:01s:521ms:679us:100ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 10000 iteration: 00m:01s:507ms:272us:200ns
+one transaction seek (small.file) --> 10000 iteration: 00m:01s:504ms:228us:500ns
+one transaction fs (small.file) --> 10000 iteration: 00m:01s:611ms:828us:900ns
+stream_mapping_deque (small.file) --> 10000 iteration: 00m:32s:828ms:685us:00ns
+stream_mapping_vector (small.file) --> 10000 iteration: 00m:18s:317ms:534us:300ns
 
 
-Kernel mapping (big.file) --> 1 iteration: 00m:00s:00ms:160800ns:00us:
-traditional_read (big.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:30ms:790300ns:00us:
-traditional_read (big.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:11ms:452000ns:00us:
-traditional_read (big.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:11ms:263800ns:00us:
-traditional_read (big.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:11ms:660800ns:00us:
-traditional_read (big.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:11ms:224000ns:00us:
-one transaction seek (big.file) --> 1 iteration: 00m:00s:15ms:199600ns:00us:
-one transaction fs (big.file) --> 1 iteration: 00m:00s:15ms:472700ns:00us:
-stream_mapping_deque (big.file) --> 1 iteration: 00m:00s:229ms:633200ns:00us:
-stream_mapping_vector (big.file) --> 1 iteration: 00m:00s:110ms:972400ns:00us:
+Kernel mapping (big.file) --> 1 iteration: 00m:00s:00ms:128us:500ns
+traditional_read (big.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:12ms:935us:100ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:12ms:64us:300ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:11ms:348us:00ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:11ms:580us:700ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:11ms:384us:200ns
+one transaction seek (big.file) --> 1 iteration: 00m:00s:15ms:271us:700ns
+one transaction fs (big.file) --> 1 iteration: 00m:00s:15ms:371us:900ns
+stream_mapping_deque (big.file) --> 1 iteration: 00m:00s:230ms:220us:200ns
+stream_mapping_vector (big.file) --> 1 iteration: 00m:00s:128ms:177us:800ns
 
-Kernel mapping (big.file) --> 1000 iteration: 00m:00s:67ms:81900ns:00us:
-traditional_read (big.file). Buffer size: 512 bytes --> 1000 iteration: 00m:11s:995ms:932400ns:00us:
-traditional_read (big.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:11s:267ms:251500ns:00us:
-traditional_read (big.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:10s:966ms:180800ns:00us:
-traditional_read (big.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:11s:81ms:74100ns:00us:
-traditional_read (big.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:10s:914ms:266400ns:00us:
-one transaction seek (big.file) --> 1000 iteration: 00m:16s:220ms:510700ns:00us:
-one transaction fs (big.file) --> 1000 iteration: 00m:16s:245ms:43600ns:00us:
-stream_mapping_deque (big.file) --> 1000 iteration: 03m:46s:162ms:269700ns:00us:
-stream_mapping_vector (big.file) --> 1000 iteration: 01m:48s:81ms:586100ns:00us:
+Kernel mapping (big.file) --> 1000 iteration: 00m:00s:64ms:894us:100ns
+traditional_read (big.file). Buffer size: 512 bytes --> 1000 iteration: 00m:12s:26ms:150us:600ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:11s:286ms:76us:500ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:11s:26ms:305us:800ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:11s:155ms:628us:400ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:11s:19ms:846us:700ns
+one transaction seek (big.file) --> 1000 iteration: 00m:15s:73ms:317us:500ns
+one transaction fs (big.file) --> 1000 iteration: 00m:14s:998ms:351us:900ns
+stream_mapping_deque (big.file) --> 1000 iteration: 03m:41s:891ms:713us:800ns
+stream_mapping_vector (big.file) --> 1000 iteration: 02m:05s:915ms:278us:100ns
 
-Kernel mapping (big.file) --> 10000 iteration: 00m:00s:656ms:178800ns:00us:
-traditional_read (big.file). Buffer size: 512 bytes --> 10000 iteration: 02m:00s:679ms:961400ns:00us:
-traditional_read (big.file). Buffer size: 1024 bytes --> 10000 iteration: 01m:55s:463ms:298100ns:00us:
-traditional_read (big.file). Buffer size: 2048 bytes --> 10000 iteration: 01m:52s:828ms:705000ns:00us:
-traditional_read (big.file). Buffer size: 4096 bytes --> 10000 iteration: 01m:52s:426ms:143800ns:00us:
-traditional_read (big.file). Buffer size: 8192 bytes --> 10000 iteration: 01m:52s:880ms:784400ns:00us:
-one transaction seek (big.file) --> 10000 iteration: 02m:32s:918ms:628700ns:00us:
-one transaction fs (big.file) --> 10000 iteration: 02m:34s:890ms:507100ns:00us:
-stream_mapping_deque (big.file) --> 10000 iteration: 37m:23s:899ms:663700ns:00us:
-stream_mapping_vector (big.file) --> 10000 iteration: 17m:47s:694ms:247300ns:00us:
+Kernel mapping (big.file) --> 10000 iteration: 00m:00s:645ms:78us:800ns
+traditional_read (big.file). Buffer size: 512 bytes --> 10000 iteration: 01m:59s:532ms:439us:900ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 10000 iteration: 01m:52s:720ms:897us:300ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 10000 iteration: 01m:49s:887ms:75us:900ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 10000 iteration: 01m:50s:379ms:666us:100ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 10000 iteration: 01m:49s:104ms:594us:900ns
+one transaction seek (big.file) --> 10000 iteration: 02m:30s:72ms:135us:900ns
+one transaction fs (big.file) --> 10000 iteration: 02m:30s:190ms:157us:300ns
+stream_mapping_deque (big.file) --> 10000 iteration: 37m:02s:158ms:177us:200ns
+stream_mapping_vector (big.file) --> 10000 iteration: 20m:58s:607ms:08us:100ns
+
+Total time taken: 80m:47s:637ms:662us:300ns
 ```
 
 As you can appreciate, the power of compiler and the magic of the optimizations are awesome even we could finish the test!
@@ -208,6 +210,83 @@ traditional_read (big.file). Buffer size: 8192 bytes --> 10000 iteration: 01m:41
 ```
 
 It seems and **is** demonstrated that Linux is faster than windows. At least when we are comparing non optimized versions.
+
+##### OPTIMIZATIONS **ENABLED**
+```
+Kernel mapping (small.file) --> 1 iteration: 00m:00s:00ms:79us:800ns
+traditional_read (small.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:00ms:282us:400ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:00ms:192us:300ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:00ms:193us:100ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:00ms:224us:500ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:00ms:181us:900ns
+one transaction seek (small.file) --> 1 iteration: 00m:00s:00ms:297us:600ns
+one transaction fs (small.file) --> 1 iteration: 00m:00s:00ms:272us:400ns
+stream_mapping_deque (small.file) --> 1 iteration: 00m:00s:01ms:05us:00ns
+stream_mapping_vector (small.file) --> 1 iteration: 00m:00s:01ms:316us:800ns
+
+Kernel mapping (small.file) --> 1000 iteration: 00m:00s:51ms:29us:600ns
+traditional_read (small.file). Buffer size: 512 bytes --> 1000 iteration: 00m:00s:179ms:273us:900ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:00s:172ms:766us:900ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:00s:172ms:704us:900ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:00s:174ms:634us:800ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:00s:158ms:527us:00ns
+one transaction seek (small.file) --> 1000 iteration: 00m:00s:67ms:242us:00ns
+one transaction fs (small.file) --> 1000 iteration: 00m:00s:66ms:526us:400ns
+stream_mapping_deque (small.file) --> 1000 iteration: 00m:00s:981ms:306us:600ns
+stream_mapping_vector (small.file) --> 1000 iteration: 00m:01s:515ms:845us:800ns
+
+Kernel mapping (small.file) --> 10000 iteration: 00m:00s:506ms:754us:400ns
+traditional_read (small.file). Buffer size: 512 bytes --> 10000 iteration: 00m:01s:768ms:713us:800ns
+traditional_read (small.file). Buffer size: 1024 bytes --> 10000 iteration: 00m:01s:719ms:127us:300ns
+traditional_read (small.file). Buffer size: 2048 bytes --> 10000 iteration: 00m:01s:708ms:917us:00ns
+traditional_read (small.file). Buffer size: 4096 bytes --> 10000 iteration: 00m:01s:705ms:724us:700ns
+traditional_read (small.file). Buffer size: 8192 bytes --> 10000 iteration: 00m:01s:592ms:674us:300ns
+one transaction seek (small.file) --> 10000 iteration: 00m:00s:645ms:906us:900ns
+one transaction fs (small.file) --> 10000 iteration: 00m:00s:635ms:452us:900ns
+stream_mapping_deque (small.file) --> 10000 iteration: 00m:09s:798ms:258us:100ns
+stream_mapping_vector (small.file) --> 10000 iteration: 00m:15s:73ms:79us:500ns
+
+
+Kernel mapping (big.file) --> 1 iteration: 00m:00s:00ms:396us:700ns
+traditional_read (big.file). Buffer size: 512 bytes --> 1 iteration: 00m:00s:11ms:690us:700ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 1 iteration: 00m:00s:11ms:166us:300ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 1 iteration: 00m:00s:11ms:216us:200ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 1 iteration: 00m:00s:11ms:50us:900ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 1 iteration: 00m:00s:10ms:737us:600ns
+one transaction seek (big.file) --> 1 iteration: 00m:00s:29ms:321us:500ns
+one transaction fs (big.file) --> 1 iteration: 00m:00s:27ms:237us:400ns
+stream_mapping_deque (big.file) --> 1 iteration: 00m:00s:64ms:375us:800ns
+stream_mapping_vector (big.file) --> 1 iteration: 00m:00s:86ms:409us:200ns
+
+Kernel mapping (big.file) --> 1000 iteration: 00m:00s:364ms:950us:400ns
+traditional_read (big.file). Buffer size: 512 bytes --> 1000 iteration: 00m:11s:287ms:655us:800ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 1000 iteration: 00m:11s:86ms:698us:800ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 1000 iteration: 00m:11s:42ms:189us:200ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 1000 iteration: 00m:10s:904ms:247us:500ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 1000 iteration: 00m:10s:173ms:756us:700ns
+one transaction seek (big.file) --> 1000 iteration: 00m:04s:190ms:396us:300ns
+one transaction fs (big.file) --> 1000 iteration: 00m:04s:174ms:767us:500ns
+stream_mapping_deque (big.file) --> 1000 iteration: 01m:03s:589ms:643us:400ns
+stream_mapping_vector (big.file) --> 1000 iteration: 01m:20s:232ms:719us:400ns
+
+Kernel mapping (big.file) --> 10000 iteration: 00m:03s:650ms:78us:400ns
+traditional_read (big.file). Buffer size: 512 bytes --> 10000 iteration: 01m:53s:252ms:303us:200ns
+traditional_read (big.file). Buffer size: 1024 bytes --> 10000 iteration: 01m:50s:405ms:273us:300ns
+traditional_read (big.file). Buffer size: 2048 bytes --> 10000 iteration: 01m:49s:375ms:588us:200ns
+traditional_read (big.file). Buffer size: 4096 bytes --> 10000 iteration: 01m:50s:51ms:240us:200ns
+traditional_read (big.file). Buffer size: 8192 bytes --> 10000 iteration: 01m:42s:983ms:857us:400ns
+one transaction seek (big.file) --> 10000 iteration: 00m:43s:668ms:527us:600ns
+one transaction fs (big.file) --> 10000 iteration: 00m:42s:634ms:494us:600ns
+stream_mapping_deque (big.file) --> 10000 iteration: 10m:31s:782ms:879us:400ns
+stream_mapping_vector (big.file) --> 10000 iteration: 13m:35s:215ms:478us:200ns
+
+Total time taken: 40m:21s:28ms:536us:300ns
+```
+
+Finally, winner is obvius... although windows is scalling very well in kernel mapping, with few iterations is so closed, but, when 
+bunch increases, the difference is noticeable.
+
+To conclude and sumarize up, best way to map a file into memory is using kernel API.
 
 ## Kernel IO
 
